@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @EnableAutoConfiguration
-public class StartController {
+public class StartApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(StartController.class, args);
+        SpringApplication.run(StartApplication.class, args);
     }
 }
