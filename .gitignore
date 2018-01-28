@@ -1,0 +1,14 @@
+.DS_Store
+
+.settings/
+.idea/
+out/
+*.iml
+.classpath
+.project
+.svn/
+
+target/
+logs/
+data/
+image/
