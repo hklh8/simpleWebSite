@@ -99,7 +99,7 @@ public class FileService {
         FileOutputStream outStream = null;
         try {
             outStream = new FileOutputStream(absolutePath);
-            IOUtils.write(strb.toString(), outStream);
+            IOUtils.write(strb.toString(), outStream, Charset.forName("UTF-8"));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
