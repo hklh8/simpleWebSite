@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>图片上传</title>
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/jquery.form-3.50.min.js"></script>
 </head>
 <body>
-<form action="file/uploadImage" method="post" enctype="multipart/form-data">
-    <input type="file" name="file1"/><br/>
-    <input type="file" name="file2"/><br/>
-    <input type="file" name="file3"/><br/>
-    <input type="submit" value="上 传"/>
+<form id="oForm" action="file/uploadImage" method="POST" enctype="multipart/form-data">
+    图片1：<input type="file" name="file1"/><br/>
+    图片2：<input type="file" name="file2"/><br/>
+    图片3：<input type="file" name="file3"/><br/>
+    <input id="btn" type="button" value="上 传"/>
 </form>
+<br/>
+<a href="index.html">首页</a>
+<script>
+    var options = {
+        success: function (data) {
+            alert("上传成功！");
+        },
+        error: function () {
+            alert("上传失败！");
+        }
+    };
+
+    $("#btn").click(function () {
+        $("#oForm").ajaxSubmit(options);
+    });
+</script>
 </body>
 </html>

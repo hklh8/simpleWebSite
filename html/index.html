@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <h2>这里是html首页！</h2>
+<div id="oDiv">
+    <img src="#"><br/>
+    <img src="#"><br/>
+    <img src="#"><br/>
+</div>
+<script>
+    $.ajax({
+        url: "file/getFiles",
+        type: "GET",
+        success: function (data) {
+            if (data && data.length > 0) {
+                $("div#oDiv img").each(function (i) {
+                    $(this).attr("src", "/file/downloadImage/" + data[i].uuid);
+                });
+            } else {
+                alert("请先上传图片！")
+            }
+        },
+        error: function () {
+            console.log(data);
+        }
+    });
+</script>
 </body>
 </html>
